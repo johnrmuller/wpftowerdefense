@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfTowerDefense.Block"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="50" Width="43.3">
+    <Canvas x:Name="LayoutRoot" Height="50" Width="43.3" IsHitTestVisible="False">
+        <Polygon Name="Body"  Height="50" Width="43.3" Fill="Black" Stroke="Red" Opacity="1">
+            <Polygon.StrokeThickness>2</Polygon.StrokeThickness>
+            <Polygon.Points>
+                <Point X="0" Y="37.5"/>
+                <Point X="0" Y="12.5"/>
+                <Point X="21.65" Y="0"/>
+                <Point X="43.3" Y="12.5"/>
+                <Point X="43.3" Y="37.5"/>
+                <Point X="21.65" Y="50"/>
+            </Polygon.Points>
+        </Polygon>
+
+    </Canvas>
+</UserControl>

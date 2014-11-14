@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfTowerDefense.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfTowerDefense"
+    Title="Window1" Height="Auto" Width="Auto">
+
+
+    <!--<Grid Background="Red">-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Width="100" Orientation="Vertical">
+            <Label Name="_Money">$</Label>
+            <Label Name="_Lives">@</Label>
+            <Button Name="_Go_Stop" Click="Go_Click">
+                Go
+            </Button>
+            <Button Name="_Call_Wave" Click="Call_Click">
+                Call Wave
+            </Button>
+            <ListBox Name="Towers" Width="100" Height="300">
+            </ListBox>
+            <Label Name="Debug">
+            </Label>
+        </StackPanel>
+        <Slider Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Orientation="Vertical" x:Name="Zoom" Value="1" Maximum="2" Minimum="1"/>
+        <Slider Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="3"  Orientation="Horizontal" x:Name="Rotate" Value="0" Maximum="180" Minimum="-180"/>
+
+
+        <Grid x:Name="ArenaContainer" Grid.Column="3" Grid.Row="2" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" >
+            <ScrollViewer x:Name="ArenaScroll" MinHeight="100" MinWidth="100"
+                          ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                          Background="Aqua" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+
+                <local:Arena  Height="707" Width="909.3"  Background="Transparent" x:Name="TheArena" ClipToBounds="True"/>
+
+            </ScrollViewer>
+                </Grid>
+        
+    </Grid>
+    <!--</Grid>VerticalAlignment="Top" HorizontalAlignment="Left" -->
+</Window>

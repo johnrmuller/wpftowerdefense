@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="UserControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Canvas" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="Height" type="xs:string" />
+      <xs:attribute name="Width" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Canvas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Polygon" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Polygon.Fill" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="LinearGradientBrush" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Polygon.Points" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Point" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="X" type="xs:string" />
+                        <xs:attribute name="Y" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" />
+            <xs:attribute name="Height" type="xs:string" />
+            <xs:attribute name="Width" type="xs:string" />
+            <xs:attribute name="Stroke" type="xs:string" />
+            <xs:attribute name="StrokeThickness" type="xs:string" />
+            <xs:attribute name="Fill" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rectangle" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Canvas.Top" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+              <xs:element name="Canvas.Left" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="Rectangle.Fill" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="LinearGradientBrush" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" />
+            <xs:attribute name="Stroke" type="xs:string" />
+            <xs:attribute name="HorizontalAlignment" type="xs:string" />
+            <xs:attribute name="VerticalAlignment" type="xs:string" />
+            <xs:attribute name="Width" type="xs:string" />
+            <xs:attribute name="Height" type="xs:string" />
+            <xs:attribute name="RenderTransformOrigin" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Height" type="xs:string" />
+      <xs:attribute name="Width" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinearGradientBrush">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GradientStop" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="Color" type="xs:string" />
+            <xs:attribute name="Offset" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="EndPoint" type="xs:string" />
+      <xs:attribute name="StartPoint" type="xs:string" />
+      <xs:attribute name="MappingMode" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StartingCash" type="xs:string" minOccurs="0" />
+        <xs:element name="TowerTypes" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RadiatorTowers" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RadiatorTower" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="UserControl" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" />
+                        <xs:attribute name="Price" type="xs:string" />
+                        <xs:attribute name="HeatAbsorb" type="xs:string" />
+                        <xs:attribute name="HeatDecay" type="xs:string" />
+                        <xs:attribute name="ShutdownHeat" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProjectileTowers" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProjectileTower" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="Canvas" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element ref="UserControl" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                        <xs:attribute name="Price" type="xs:string" />
+                        <xs:attribute name="Name" type="xs:string" />
+                        <xs:attribute name="Range" type="xs:string" />
+                        <xs:attribute name="TrackingSpeed" type="xs:string" />
+                        <xs:attribute name="RefireDelay" type="xs:string" />
+                        <xs:attribute name="FiringHeat" type="xs:string" />
+                        <xs:attribute name="HeatDecay" type="xs:string" />
+                        <xs:attribute name="ShutdownHeat" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BeamTower" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="UserControl" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" />
+                        <xs:attribute name="Price" type="xs:string" />
+                        <xs:attribute name="Range" type="xs:string" />
+                        <xs:attribute name="TrackingSpeed" type="xs:string" />
+                        <xs:attribute name="HeatDecay" type="xs:string" />
+                        <xs:attribute name="FiringHeat" type="xs:string" />
+                        <xs:attribute name="ShutdownHeat" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="UserControl" />
+        <xs:element ref="Canvas" />
+        <xs:element ref="LinearGradientBrush" />
+        <xs:element ref="GameData" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

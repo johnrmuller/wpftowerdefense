@@ -1,0 +1,52 @@
+﻿<local:Tower
+    x:Class="WpfTowerDefense.BeamTurret"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfTowerDefense"
+     Width="60" Height="60">
+	
+	
+        <Canvas x:Name="LayoutRoot" Width="60" Height="60">
+            <Polygon Name="_Body"  Height="50" Width="43.3" Fill="Blue" Stroke="White">
+            <Polygon.StrokeThickness>2</Polygon.StrokeThickness>
+            <Polygon.Points>
+                <Point X="0" Y="37.5"/>
+                <Point X="0" Y="12.5"/>
+                <Point X="21.65" Y="0"/>
+                <Point X="43.3" Y="12.5"/>
+                <Point X="43.3" Y="37.5"/>
+                <Point X="21.65" Y="50"/>
+            </Polygon.Points>
+        </Polygon>
+            <Rectangle Name="Barrel" Stroke="White" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="10" Height="50" RenderTransformOrigin="0.5,0.9">
+                <Canvas.Top>-15</Canvas.Top>
+                <Canvas.Left>25</Canvas.Left>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#FF404040" Offset="1"/>
+                    <GradientStop Color="#FFA0A0A0" Offset="0.1"/>
+                    <GradientStop Color="#FF404040" Offset="0.2"/>
+
+                    <GradientStop Color="#FFA0A0A0" Offset="0.3"/>
+                    <GradientStop Color="#FF404040" Offset="0.4"/>
+                    <GradientStop Color="#FFA0A0A0" Offset="0.5"/>
+                    <GradientStop Color="#FF404040" Offset="0.6"/>
+                    <GradientStop Color="#FFA0A0A0" Offset="0.7"/>
+                    <GradientStop Color="#FF404040" Offset="0.8"/>
+                        <GradientStop Color="#FFA0A0A0" Offset="0.9"/>
+                    <GradientStop Color="#FF404040" Offset="1"/>
+                </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding TurretRotation, ElementName=UserControl, Mode=OneWay, FallbackValue=45}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+
+            </Rectangle>
+        </Canvas>
+    
+</local:Tower>

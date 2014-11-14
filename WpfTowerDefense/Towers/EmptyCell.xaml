@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WpfTowerDefense.EmptyCell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     Height="50" Width="43.3" Background="Transparent">
+    <Canvas x:Name="LayoutRoot" Height="50" Width="43.3">
+        <Polygon Name="Body"  Height="50" Width="43.3" Fill="Transparent" Stroke="White" StrokeThickness="0" Opacity="25">
+           
+            <Polygon.Points>
+                <Point X="0" Y="37.5"/>
+                <Point X="0" Y="12.5"/>
+                <Point X="21.65" Y="0"/>
+                <Point X="43.3" Y="12.5"/>
+                <Point X="43.3" Y="37.5"/>
+                <Point X="21.65" Y="50"/>
+            </Polygon.Points>
+        </Polygon>
+        <!--
+        <Label Name="pc" Height="25" Width="43.3" Canvas.Top="5" Opacity="1" IsHitTestVisible="False">XX</Label>
+        
+        
+        <Label Name="pd" Height="25" Width="43.3" Canvas.Top="20" Opacity="0" IsHitTestVisible="False">OO</Label>
+        HorizontalAlignment="Center" VerticalAlignment="Center"-->
+    </Canvas>
+</UserControl>
